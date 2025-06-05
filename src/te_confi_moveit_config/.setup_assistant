@@ -1,0 +1,26 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: te_confi
+    relative_path: urdf/te_confi.urdf
+    xacro_args: "--inorder\n"
+  srdf:
+    relative_path: config/te_confi.srdf
+  package_settings:
+    author_name: capstone
+    author_email: capstone@example.com
+    generated_timestamp: 1746794542
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

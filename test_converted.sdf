@@ -1,0 +1,508 @@
+<sdf version='1.7'>
+  <model name='te_confi'>
+    <link name='station_fix'>
+      <inertial>
+        <pose>-4.4e-05 0.000296 0.037961 0 -0 0</pose>
+        <mass>0.846389</mass>
+        <inertia>
+          <ixx>0.00148973</ixx>
+          <ixy>3.48461e-06</ixy>
+          <ixz>1.30589e-06</ixz>
+          <iyy>0.00153594</iyy>
+          <iyz>-4.41841e-06</iyz>
+          <izz>0.00230589</izz>
+        </inertia>
+      </inertial>
+      <collision name='station_fix_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/station_fix.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='station_fix_fixed_joint_lump__station_link_collision_1'>
+        <pose>0 0 0.03 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/station_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='station_fix_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/station_fix.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='station_fix_fixed_joint_lump__station_link_visual_1'>
+        <pose>0 0 0.03 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/station_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='j_base_2' type='revolute'>
+      <pose relative_to='station_fix'>0 -0 0.07 1.5708 0 -0.048131</pose>
+      <parent>station_fix</parent>
+      <child>base_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='base_link'>
+      <pose relative_to='j_base_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.001609 0.04572 -0.000275 0 -0 0</pose>
+        <mass>0.477864</mass>
+        <inertia>
+          <ixx>0.000715531</ixx>
+          <ixy>-5.88826e-06</ixy>
+          <ixz>3.24529e-06</ixz>
+          <iyy>0.000944423</iyy>
+          <iyz>-1.09793e-05</iyz>
+          <izz>0.000514907</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='j_lower_arm_3' type='revolute'>
+      <pose relative_to='base_link'>0.017946 0.072 0.001388 3.06441 -0.001037 1.55739</pose>
+      <parent>base_link</parent>
+      <child>lower_arm_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lower_arm_link'>
+      <pose relative_to='j_lower_arm_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.084473 0 -0.00723 0 -0 0</pose>
+        <mass>0.234056</mass>
+        <inertia>
+          <ixx>7.82643e-05</ixx>
+          <ixy>3.2365e-11</ixy>
+          <ixz>-2.57822e-05</ixz>
+          <iyy>0.000754327</iyy>
+          <iyz>-2.82736e-11</iyz>
+          <izz>0.000762797</izz>
+        </inertia>
+      </inertial>
+      <collision name='lower_arm_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/lower_arm_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='lower_arm_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/lower_arm_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='j_upper_arm_3' type='revolute'>
+      <pose relative_to='lower_arm_link'>0.146 0 -0.031011 0 -0 1.58904</pose>
+      <parent>lower_arm_link</parent>
+      <child>upper_arm_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='upper_arm_link'>
+      <pose relative_to='j_upper_arm_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.050839 0.00016 -0.032871 0 -0 0</pose>
+        <mass>0.296284</mass>
+        <inertia>
+          <ixx>0.000115976</ixx>
+          <ixy>9.78066e-06</ixy>
+          <ixz>-1.1939e-05</ixz>
+          <iyy>0.000775514</iyy>
+          <iyz>1.21368e-07</iyz>
+          <izz>0.00076484</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_arm_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/upper_arm_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='upper_arm_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/upper_arm_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Yellow</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='j_gripper_4' type='revolute'>
+      <pose relative_to='upper_arm_link'>0.134344 -0.004 -0.032489 -3.07645 0 0</pose>
+      <parent>upper_arm_link</parent>
+      <child>gripper_bracket_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='gripper_bracket_link'>
+      <pose relative_to='j_gripper_4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.028324 -0.001171 0 0 -0 0</pose>
+        <mass>0.0536474</mass>
+        <inertia>
+          <ixx>1.71397e-05</ixx>
+          <ixy>1.99373e-06</ixy>
+          <ixz>-3.51e-20</ixz>
+          <iyy>2.5309e-05</iyy>
+          <iyz>7.4361e-21</iyz>
+          <izz>2.09106e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='gripper_bracket_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/gripper_bracket_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='gripper_bracket_link_fixed_joint_lump__gripper_link_collision_1'>
+        <pose>0.017656 0 0 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/gripper_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='gripper_bracket_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/gripper_bracket_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='gripper_bracket_link_fixed_joint_lump__gripper_link_visual_1'>
+        <pose>0.017656 0 0 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/gripper_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='j_gripper_claw_1' type='revolute'>
+      <pose relative_to='gripper_bracket_link'>0.046656 -0.00475 -0.013 -0 -0.241193 2e-06</pose>
+      <parent>gripper_bracket_link</parent>
+      <child>gripper_claw_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='gripper_claw_1'>
+      <pose relative_to='j_gripper_claw_1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.015374 0.013513 -0.043426 0 -0 0</pose>
+        <mass>0.0124823</mass>
+        <inertia>
+          <ixx>2.71912e-06</ixx>
+          <ixy>-2.82909e-19</ixy>
+          <ixz>2.43463e-06</ixz>
+          <iyy>7.14244e-06</iyy>
+          <iyz>-6.43401e-19</iyz>
+          <izz>4.50775e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='gripper_claw_1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/gripper_claw_1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='gripper_claw_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/gripper_claw_1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Gray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='j_gripper_claw_2' type='revolute'>
+      <pose relative_to='gripper_bracket_link'>0.046656 0 0.013 3.14157 -0.95367 -3.14158</pose>
+      <parent>gripper_bracket_link</parent>
+      <child>gripper_claw_2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='gripper_claw_2'>
+      <pose relative_to='j_gripper_claw_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.016929 0.008763 -0.042687 0 -0 0</pose>
+        <mass>0.0124822</mass>
+        <inertia>
+          <ixx>5.89319e-06</ixx>
+          <ixy>2.31989e-18</ixy>
+          <ixz>-1.23197e-06</ixz>
+          <iyy>7.14176e-06</iyy>
+          <iyz>-3.88863e-17</iyz>
+          <izz>1.33299e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='gripper_claw_2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/gripper_claw_2.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='gripper_claw_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://te_confi/meshes/gripper_claw_2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGray</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <static>0</static>
+    <plugin name='gazebo_ros2_control' filename='libgazebo_hardware_plugins.so'>
+      <parameters>$(find te_confi)/config/controllers.yaml</parameters>
+    </plugin>
+  </model>
+</sdf>

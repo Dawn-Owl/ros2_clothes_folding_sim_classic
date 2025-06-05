@@ -1,0 +1,41 @@
+---
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    use_sim_time: true
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      
+    joint_controller:
+      type: joint_trajectory_controller/JointTrajectoryController  
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - j_base_2
+      - j_lower_arm_3
+      - j_upper_arm_3
+      - j_gripper_4
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+      
+joint_controller:
+  ros__parameters:
+    joints:
+      - j_gripper_claw_1
+      - j_gripper_claw_2
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity      
+      
+      
+      

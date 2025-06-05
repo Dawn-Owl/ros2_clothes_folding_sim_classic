@@ -1,0 +1,9 @@
+# Default initial positions for te_confi's ros2_control fake system
+
+initial_positions:
+  j_base_2: 0
+  j_gripper_4: 0
+  j_lower_arm_3: 0
+  j_upper_arm_3: 0
+  j_gripper_claw_1: 0
+  j_gripper_claw_2: 0

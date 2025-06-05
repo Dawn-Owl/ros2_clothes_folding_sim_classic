@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="te_confi">
+
+    <!-- Gazebo ros2_control plugin -->
+    <gazebo>
+     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control_node">
+     <robot_param>robot_description</robot_param>
+     <robot_param_node>robot_state_publisher</robot_param_node>
+     <parameters>$(find te_confi)/config/controllers.yaml</parameters>
+     </plugin>
+    </gazebo>
+
+
+</robot>
+
+
+

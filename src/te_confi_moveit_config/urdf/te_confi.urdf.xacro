@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="te_confi">
+    <!--<xacro:arg name="initial_positions_file" default="initial_positions.yaml" />-->
+    <!--joint_state problem-->
+
+    <!-- Import te_confi urdf file -->
+    <xacro:include filename="te_confi.urdf"/>
+    <!--<xacro:include filename="$(find te_confi)/urdf/te_confi.urdf" />-->
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="../config/te_confi.ros2_control.xacro" />
+    <!--<xacro:include filename="$(find te_confi_moveit_config)/config/te_confi.ros2_control.xacro" />-->
+<!--<xacro:include filename="te_confi.ros2_control.xacro" />-->
+
+
+   <!-- <xacro:te_confi_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>--><!--joint_state problem-->
+
+</robot>
