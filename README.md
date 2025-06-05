@@ -65,6 +65,22 @@ ros2 run controller_manager spawner arm_controller \
 ros2 run controller_manager spawner gripper_controller \
 --controller-manager /controller_manager
 
+### Controller Example
+source install/setup.bash
+
+ros2 topic pub /arm_controller/joint_trajectory trajectory_msgs/msg/JointTrajectory "
+header:
+  stamp:
+    sec: 0
+    nanosec: 0
+  frame_id: ''
+joint_names: ['j_base_2', 'j_lower_arm_3', 'j_upper_arm_3', 'j_gripper_4']
+points:
+- positions: [0.0, -0.5, -0.8, 0.5]
+  time_from_start:
+    sec: 3
+    nanosec: 0"
+
 ---
 
 
