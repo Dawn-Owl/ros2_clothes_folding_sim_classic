@@ -7,6 +7,10 @@ This repository contains the initial simulation environment of a robot arm that 
 - `te_confi_moveit_config`: MoveIt2 configuration for motion planning
 - `gazebo_ros2_control`: Local copy from [gazebo_ros2_control](https://github.com/ros-controls/gazebo_ros2_control)
 
+## 🌀 Demo Preview
+
+![Robot Arm Demo](images/robot_arm_test_final.gif)
+
 
 ## How to Run
 
