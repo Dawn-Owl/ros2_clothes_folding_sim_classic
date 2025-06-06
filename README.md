@@ -14,7 +14,7 @@ This repository contains the initial simulation environment of a robot arm that 
 
 ## How to Run
 
-This simulation uses **ROS 2 Humble** and **Gazebo Classic**.  
+This simulation uses **ROS 2 Humble** and **Gazebo Classic** and **Moveit2**.  
 Make sure both are properly installed and sourced before proceeding.
 
 ---
