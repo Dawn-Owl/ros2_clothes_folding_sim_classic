@@ -11,6 +11,8 @@ This repository contains the initial simulation environment of a robot arm that 
 
 ![Robot Arm Demo](images/robot_arm_test_final.gif)
 
+### 📌 Real Robot Test
+![Real Robot Test](images/Real_test.gif)
 
 ## How to Run
 
